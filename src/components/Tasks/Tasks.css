@@ -1,15 +1,27 @@
 @import url('../../../public/themes/themes.css');
 
-p {
-  border-bottom: 1px solid var(--primary);
-  color: var(--neutral);
-  height: 50px;
-  font-size: var(--fontSize);
-  padding: 0 2.5%;
+.boxItemTask {
   display: flex;
   align-items: center;
-  margin: 1% 0;
+  justify-content: space-between;
+  color: var(--neutral);
+  /* margin: 1%; */
+  height: 50px;
   animation: newTask 0.3s forwards;
+  font-size: var(--fontSize);
+}
+.nameTask {
+  border-bottom: 1px solid var(--primary);
+  width: 75%;
+}
+.boxDataTask {
+  border-bottom: 1px solid var(--secondary);
+  color: var(--neutral2);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 25%;
+  font-size: var(--fontSizeMin);
 }
 
 @keyframes newTask {

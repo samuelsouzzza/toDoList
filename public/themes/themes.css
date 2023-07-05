@@ -3,6 +3,7 @@
 :root {
   --font: 'Open Sans', sans-serif;
   --fontSize: 17px;
+  --fontSizeMin: 13px;
   --background: #101010;
   --neutral: #fefefe;
   --neutral2: #fefefe54;
