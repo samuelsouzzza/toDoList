@@ -3,25 +3,58 @@ import Tasks from './components/Tasks/Tasks';
 import './App.css';
 
 const App = () => {
-  const templateTasks = [
+  const template = [
     {
       id: 1,
-      name: 'Minha primeira tarefa',
+      name: 'sdfas',
     },
     {
       id: 2,
-      name: 'Minha segunda tarefa',
+      name: 'sdfj',
+    },
+    {
+      id: 3,
+      name: 'sdfj',
+    },
+    {
+      id: 4,
+      name: 'sdfj',
+    },
+    {
+      id: 5,
+      name: 'sdfj',
+    },
+    {
+      id: 6,
+      name: 'sdfj',
+    },
+    {
+      id: 7,
+      name: 'sdfj',
+    },
+    {
+      id: 8,
+      name: 'sdfj',
+    },
+    {
+      id: 9,
+      name: 'sdfj',
+    },
+    {
+      id: 10,
+      name: 'sdfj',
     },
   ];
-
   const [valueInput, setValueInput] = React.useState('');
-  const [tasks, setTasks] = React.useState(templateTasks);
+  const [tasks, setTasks] = React.useState(template);
   const [stateButton, setStateButton] = React.useState(true);
+  const [count, setCount] = React.useState(tasks.length);
 
   function handleChange({ target }) {
     target.value.length === 0 ? setStateButton(true) : setStateButton(false);
     setValueInput(target.value);
   }
+
   function handleClick() {
     const newTask = {
       id: tasks.length + 1,
@@ -31,12 +64,19 @@ const App = () => {
     setValueInput('');
     setStateButton(true);
   }
+
+  function renderTask() {
+    if (tasks.length === 0) {
+      return <p className='noTasks'>Não há tarefas</p>;
+    } else {
+      return <Tasks list={tasks} />;
+    }
+  }
   return (
     <div className='container'>
       <section className='card'>
-        <div className='boxTasks'>
-          <Tasks list={tasks} />
-        </div>
+        <span className='countTasks'>{count}/10 tarefas</span>
+        <div className='boxTasks'>{renderTask()}</div>
         <div className='boxInput'>
           <input
             type='text'

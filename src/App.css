@@ -10,7 +10,6 @@
   align-items: center;
 }
 .card {
-  /* border: 1px solid var(--neutral2); */
   height: 100%;
   width: 65%;
   padding: 1.5%;
@@ -20,10 +19,16 @@
   gap: 1%;
 }
 
+.countTasks {
+  align-self: end;
+  color: var(--neutral2);
+}
+
 .boxTasks {
-  /* border: 1px solid var(--neutral2); */
   height: 85%;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
 }
 .boxTasks::-webkit-scrollbar {
   width: 5px;
@@ -36,8 +41,14 @@
   background-color: var(--background);
 }
 
+.noTasks {
+  border: none;
+  color: #555;
+  display: flex;
+  justify-content: center;
+}
+
 .boxInput {
-  /* border: 1px solid var(--neutral2); */
   height: 10%;
 }
 
@@ -69,4 +80,5 @@
 }
 .btnSaveTask:disabled {
   background-color: var(--neutral2);
+  cursor: not-allowed;
 }
