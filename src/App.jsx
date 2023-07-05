@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Tasks from './components/Tasks/Tasks';
 import './App.css';
 
@@ -36,19 +36,15 @@ const App = () => {
       id: 8,
       name: 'sdfj',
     },
-    {
-      id: 9,
-      name: 'sdfj',
-    },
-    {
-      id: 10,
-      name: 'sdfj',
-    },
   ];
   const [valueInput, setValueInput] = React.useState('');
   const [tasks, setTasks] = React.useState(template);
   const [stateButton, setStateButton] = React.useState(true);
   const [count, setCount] = React.useState(tasks.length);
+
+  React.useEffect(() => {
+    setCount(tasks.length);
+  }, [tasks]);
 
   function handleChange({ target }) {
     target.value.length === 0 ? setStateButton(true) : setStateButton(false);
