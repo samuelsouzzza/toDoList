@@ -2,6 +2,7 @@
 
 :root {
   --font: 'Open Sans', sans-serif;
+  --fontSize: 17px;
   --background: #101010;
   --neutral: #fefefe;
   --neutral2: #fefefe54;
@@ -14,4 +15,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: var(--font);
+}
+*::selection {
+  background-color: var(--primary);
 }

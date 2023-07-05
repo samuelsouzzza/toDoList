@@ -37,6 +37,33 @@
 }
 
 .boxInput {
-  border: 1px solid var(--neutral2);
+  /* border: 1px solid var(--neutral2); */
   height: 10%;
+}
+
+.inputTask {
+  width: 85%;
+  height: 85%;
+  font-size: var(--fontSize);
+  background-color: var(--background);
+  border: 1px solid var(--neutral2);
+  padding: 0 2.5%;
+  font-style: italic;
+  color: var(--neutral);
+}
+
+.btnSaveTask {
+  background-color: var(--secondary);
+  color: var(--neutral);
+  border: 1px solid var(--neutral);
+  width: 15%;
+  height: 85%;
+  font-size: var(--fontSize);
+  font-weight: bold;
+  cursor: pointer;
+  filter: saturate(0.1);
+  transition: 0.3s;
+}
+.btnSaveTask:hover {
+  filter: saturate(1);
 }
