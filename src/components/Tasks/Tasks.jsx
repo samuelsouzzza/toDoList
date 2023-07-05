@@ -1,8 +1,14 @@
 import React from 'react';
 import './Tasks.css';
 
-const Tasks = () => {
-  return <p>Minha primeira tarefa</p>;
+const Tasks = ({ list }) => {
+  return (
+    <>
+      {list.map((item) => {
+        return <p key={item.id}>{item.name}</p>;
+      })}
+    </>
+  );
 };
 
 export default Tasks;

@@ -61,9 +61,12 @@
   font-size: var(--fontSize);
   font-weight: bold;
   cursor: pointer;
-  filter: saturate(0.1);
+  filter: saturate(0.5);
   transition: 0.3s;
 }
 .btnSaveTask:hover {
-  filter: saturate(1);
+  filter: saturate(2);
+}
+.btnSaveTask:disabled {
+  background-color: var(--neutral2);
 }
