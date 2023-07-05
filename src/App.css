@@ -1,0 +1,29 @@
+@import url('../public/themes/themes.css');
+
+.container {
+  background-color: var(--background);
+  height: 100vh;
+  width: 100%;
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  border: 1px solid var(--neutral2);
+  height: 100%;
+  width: 65%;
+  padding: 2.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.boxTasks {
+  border: 1px solid var(--neutral2);
+  height: 85%;
+  overflow-y: scroll;
+}
+.boxInput {
+  border: 1px solid var(--neutral2);
+  height: 10%;
+}
