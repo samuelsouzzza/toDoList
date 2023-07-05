@@ -1,4 +1,5 @@
 import React from 'react';
+import Tasks from './components/Tasks/Tasks';
 import './App.css';
 
 const App = () => {
@@ -6,9 +7,17 @@ const App = () => {
     <div className='container'>
       <section className='card'>
         <div className='boxTasks'>
-          <h1>oi</h1>
-          <h1>oi</h1>
-          <h1>oi</h1>
+          <Tasks />
+          <Tasks />
+          <Tasks />
+          <Tasks />
+          <Tasks />
+          <Tasks />
+          <Tasks />
+          <Tasks />
+          <Tasks />
+          <Tasks />
+          <Tasks />
         </div>
         <div className='boxInput'>sadf</div>
       </section>

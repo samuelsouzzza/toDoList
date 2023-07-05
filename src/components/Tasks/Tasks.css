@@ -1,0 +1,12 @@
+@import url('../../../public/themes/themes.css');
+
+p {
+  border: 1px solid var(--primary);
+  color: var(--neutral);
+  height: 50px;
+  font-size: 20px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  margin: 1%;
+}
