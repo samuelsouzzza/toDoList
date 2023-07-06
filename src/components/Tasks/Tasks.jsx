@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareMinus } from '@fortawesome/free-solid-svg-icons';
 import './Tasks.css';
 
-const Tasks = ({ list }) => {
+const Tasks = ({ list, erase }) => {
   const [minutesElapsed, setMinutesElapsed] = React.useState({});
 
   React.useEffect(() => {
@@ -33,7 +33,11 @@ const Tasks = ({ list }) => {
                 ? 'Agora'
                 : minutesElapsed[item.id] + 'min'}
             </p>
-            <FontAwesomeIcon icon={faSquareMinus} className='faIcon' />
+            <FontAwesomeIcon
+              icon={faSquareMinus}
+              className='faIcon'
+              onClick={() => erase(item.id - 1)}
+            />
           </div>
         </section>
       ))}

@@ -37,11 +37,17 @@ const App = () => {
     setStateButton(true);
   }
 
+  function deleteTask(idTask) {
+    const arr = [...tasks];
+    arr.splice(idTask, 1);
+    setTasks(arr);
+  }
+
   function renderTask() {
     if (tasks.length === 0) {
       return <p className='noTasks'>Não há tarefas</p>;
     } else {
-      return <Tasks list={tasks} />;
+      return <Tasks list={tasks} erase={deleteTask} />;
     }
   }
   return (
