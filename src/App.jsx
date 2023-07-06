@@ -14,10 +14,19 @@ const App = () => {
   const [tasks, setTasks] = React.useState(template);
   const [stateButton, setStateButton] = React.useState(true);
   const [count, setCount] = React.useState(tasks.length);
+  const [storage, setStorage] = React.useState(JSON.stringify(tasks));
+
+  function convertStringfy(arr) {
+    const stringify = JSON.stringify(arr);
+    setStorage(stringify);
+
+    localStorage.setItem('tasks', storage);
+  }
 
   React.useEffect(() => {
     setCount(tasks.length);
-  }, [tasks]);
+    convertStringfy(tasks);
+  }, [tasks, storage]);
 
   function handleChange({ target }) {
     target.value.length === 0 ? setStateButton(true) : setStateButton(false);
@@ -25,16 +34,20 @@ const App = () => {
   }
 
   function handleClick() {
-    const action = Date.now();
+    function saveTask() {
+      const action = Date.now();
 
-    const newTask = {
-      id: tasks.length + 1,
-      name: valueInput,
-      time: action,
-    };
-    setTasks([...tasks, newTask]);
-    setValueInput('');
-    setStateButton(true);
+      const newTask = {
+        id: tasks.length + 1,
+        name: valueInput,
+        time: action,
+      };
+
+      setTasks([...tasks, newTask]);
+      setValueInput('');
+      setStateButton(true);
+    }
+    saveTask();
   }
 
   function deleteTask(idTask) {
