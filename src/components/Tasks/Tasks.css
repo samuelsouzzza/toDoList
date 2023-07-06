@@ -5,25 +5,41 @@
   align-items: center;
   justify-content: space-between;
   color: var(--neutral);
-  /* margin: 1%; */
+  margin: 1% 0;
+  padding: 0 1%;
   height: 50px;
   animation: newTask 0.3s forwards;
   font-size: var(--fontSize);
+  border-bottom: 1px solid var(--primary2);
+  transition: 0.3s;
+}
+.boxItemTask:hover {
+  border-color: var(--primary);
+  background-color: var(--primary2);
 }
 .nameTask {
-  border-bottom: 1px solid var(--primary);
-  width: 75%;
+  overflow-x: hidden;
+  width: 85%;
 }
-.boxDataTask {
-  border-bottom: 1px solid var(--secondary);
-  color: var(--neutral2);
+.boxStats {
+  margin: 1% 0;
+  width: 15%;
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 25%;
+  color: var(--neutral2);
   font-size: var(--fontSizeMin);
+  justify-content: end;
+  align-items: center;
 }
-
+.faIcon {
+  font-size: var(--fontSize);
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0 0 0 10%;
+}
+.faIcon:hover {
+  color: var(--neutral);
+  transform: scale(1.25);
+}
 @keyframes newTask {
   from {
     opacity: 0;

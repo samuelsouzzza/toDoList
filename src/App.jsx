@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Tasks from './components/Tasks/Tasks';
 import './App.css';
 
@@ -7,34 +7,8 @@ const App = () => {
     {
       id: 1,
       name: 'sdfas',
-    },
-    {
-      id: 2,
-      name: 'sdfj',
-    },
-    {
-      id: 3,
-      name: 'sdfj',
-    },
-    {
-      id: 4,
-      name: 'sdfj',
-    },
-    {
-      id: 5,
-      name: 'sdfj',
-    },
-    {
-      id: 6,
-      name: 'sdfj',
-    },
-    {
-      id: 7,
-      name: 'sdfj',
-    },
-    {
-      id: 8,
-      name: 'sdfj',
+      time: '12:00',
+      date: '12/02/2009',
     },
   ];
   const [valueInput, setValueInput] = React.useState('');
