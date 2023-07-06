@@ -1,32 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Tasks from './components/Tasks/Tasks';
 import './App.css';
 
 const App = () => {
-  const template = [
-    {
-      id: 1,
-      name: 'Crie sua primeira tarefa',
-      time: Date.now(),
-    },
-  ];
-  const [valueInput, setValueInput] = React.useState('');
-  const [tasks, setTasks] = React.useState(template);
-  const [stateButton, setStateButton] = React.useState(true);
-  const [count, setCount] = React.useState(tasks.length);
-  const [storage, setStorage] = React.useState(JSON.stringify(tasks));
+  const [valueInput, setValueInput] = useState('');
+  const [tasks, setTasks] = useState(() => {
+    const storedTasks = localStorage.getItem('tasks');
+    return storedTasks ? JSON.parse(storedTasks) : [];
+  });
+  const [stateButton, setStateButton] = useState(true);
+  const [count, setCount] = useState(tasks.length);
 
-  function convertStringfy(arr) {
-    const stringify = JSON.stringify(arr);
-    setStorage(stringify);
-
-    localStorage.setItem('tasks', storage);
-  }
-
-  React.useEffect(() => {
+  useEffect(() => {
     setCount(tasks.length);
-    convertStringfy(tasks);
-  }, [tasks, storage]);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
 
   function handleChange({ target }) {
     target.value.length === 0 ? setStateButton(true) : setStateButton(false);
@@ -34,20 +22,17 @@ const App = () => {
   }
 
   function handleClick() {
-    function saveTask() {
-      const action = Date.now();
+    const action = Date.now();
 
-      const newTask = {
-        id: tasks.length + 1,
-        name: valueInput,
-        time: action,
-      };
+    const newTask = {
+      id: tasks.length + 1,
+      name: valueInput,
+      time: action,
+    };
 
-      setTasks([...tasks, newTask]);
-      setValueInput('');
-      setStateButton(true);
-    }
-    saveTask();
+    setTasks([...tasks, newTask]);
+    setValueInput('');
+    setStateButton(true);
   }
 
   function deleteTask(idTask) {
@@ -63,6 +48,7 @@ const App = () => {
       return <Tasks list={tasks} erase={deleteTask} />;
     }
   }
+
   return (
     <div className='container'>
       <section className='card'>
