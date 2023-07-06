@@ -22,6 +22,7 @@
 .countTasks {
   align-self: end;
   color: var(--neutral2);
+  font-size: var(--fontSizeMin);
 }
 
 .boxTasks {
@@ -46,6 +47,9 @@
   color: #555;
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-style: italic;
 }
 
 .boxInput {
@@ -60,25 +64,26 @@
   border: 1px solid var(--neutral2);
   padding: 0 2.5%;
   font-style: italic;
+  outline: none;
   color: var(--neutral);
 }
 
 .btnSaveTask {
-  background-color: var(--secondary);
+  background-color: var(--background);
   color: var(--neutral);
   border: 1px solid var(--neutral);
   width: 15%;
   height: 85%;
   font-size: var(--fontSize);
-  font-weight: bold;
   cursor: pointer;
-  filter: saturate(0.5);
   transition: 0.3s;
 }
 .btnSaveTask:hover {
-  filter: saturate(2);
+  background-color: var(--secondary);
 }
 .btnSaveTask:disabled {
-  background-color: var(--neutral2);
+  background-color: var(--background);
+  color: var(--neutral2);
+  border: none;
   cursor: not-allowed;
 }
