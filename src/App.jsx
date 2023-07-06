@@ -6,9 +6,8 @@ const App = () => {
   const template = [
     {
       id: 1,
-      name: 'sdfas',
-      time: '12:00',
-      date: '12/02/2009',
+      name: 'Crie sua primeira tarefa',
+      time: Date.now(),
     },
   ];
   const [valueInput, setValueInput] = React.useState('');
@@ -26,9 +25,12 @@ const App = () => {
   }
 
   function handleClick() {
+    const action = Date.now();
+
     const newTask = {
       id: tasks.length + 1,
       name: valueInput,
+      time: action,
     };
     setTasks([...tasks, newTask]);
     setValueInput('');
