@@ -18,6 +18,11 @@
   border-color: var(--primary);
   background-color: var(--primary2);
 }
+.boxItemTask.checked {
+  transition: 0s;
+  color: var(--neutral2);
+  text-decoration: line-through;
+}
 .nameTask {
   overflow-x: hidden;
   width: 85%;

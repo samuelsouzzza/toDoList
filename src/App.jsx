@@ -4,10 +4,12 @@ import './App.css';
 
 const App = () => {
   const [valueInput, setValueInput] = useState('');
+
   const [tasks, setTasks] = useState(() => {
     const storedTasks = localStorage.getItem('tasks');
     return storedTasks ? JSON.parse(storedTasks) : [];
   });
+
   const [stateButton, setStateButton] = useState(true);
   const [count, setCount] = useState(tasks.length);
 
@@ -28,6 +30,7 @@ const App = () => {
       id: tasks.length + 1,
       name: valueInput,
       time: action,
+      checked: false,
     };
 
     setTasks([...tasks, newTask]);
@@ -41,11 +44,17 @@ const App = () => {
     setTasks(arr);
   }
 
+  function changeCheck(index) {
+    const updateTask = [...tasks];
+    updateTask[index].checked = !updateTask[index].checked;
+    setTasks(updateTask);
+  }
+
   function renderTask() {
     if (tasks.length === 0) {
       return <p className='noTasks'>Não há tarefas</p>;
     } else {
-      return <Tasks list={tasks} erase={deleteTask} />;
+      return <Tasks list={tasks} erase={deleteTask} onOffCheck={changeCheck} />;
     }
   }
 

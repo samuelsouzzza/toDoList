@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareMinus } from '@fortawesome/free-solid-svg-icons';
 import './Tasks.css';
 
-const Tasks = ({ list, erase }) => {
+const Tasks = ({ list, erase, onOffCheck }) => {
   const [minutesElapsed, setMinutesElapsed] = React.useState({});
 
   React.useEffect(() => {
@@ -42,8 +42,13 @@ const Tasks = ({ list, erase }) => {
   return (
     <>
       {list.map((item, index) => (
-        <section key={item.id} className='boxItemTask'>
-          <p className='nameTask'>{item.name}</p>
+        <section
+          key={item.id}
+          className={`boxItemTask ${item.checked && 'checked'}`}
+        >
+          <p className='nameTask' onClick={() => onOffCheck(index)}>
+            {item.name}
+          </p>
           <div className='boxStats'>
             <p>{timeFormatter(item.id)}</p>
             <FontAwesomeIcon
