@@ -41,7 +41,7 @@ const Tasks = ({ list, erase }) => {
 
   return (
     <>
-      {list.map((item) => (
+      {list.map((item, index) => (
         <section key={item.id} className='boxItemTask'>
           <p className='nameTask'>{item.name}</p>
           <div className='boxStats'>
@@ -49,7 +49,7 @@ const Tasks = ({ list, erase }) => {
             <FontAwesomeIcon
               icon={faSquareMinus}
               className='faIcon'
-              onClick={() => erase(item.id - 1)}
+              onClick={() => erase(index)}
             />
           </div>
         </section>
