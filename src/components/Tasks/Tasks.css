@@ -12,6 +12,7 @@
   font-size: var(--fontSize);
   border-bottom: 1px solid var(--primary2);
   transition: 0.3s;
+  cursor: pointer;
 }
 .boxItemTask:hover {
   border-color: var(--primary);
