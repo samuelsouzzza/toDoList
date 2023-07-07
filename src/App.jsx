@@ -60,6 +60,7 @@ const App = () => {
 
   return (
     <div className='container'>
+      <h1>ToTasks</h1>
       <section className='card'>
         <span className='countTasks'>{count}/10 tarefas</span>
         <div className='boxTasks'>{renderTask()}</div>
