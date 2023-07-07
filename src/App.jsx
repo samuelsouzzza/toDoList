@@ -1,19 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Tasks from './components/Tasks/Tasks';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faSave } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 
 const App = () => {
-  const [valueInput, setValueInput] = useState('');
+  const [valueInput, setValueInput] = React.useState('');
 
-  const [tasks, setTasks] = useState(() => {
+  const [tasks, setTasks] = React.useState(() => {
     const storedTasks = localStorage.getItem('tasks');
     return storedTasks ? JSON.parse(storedTasks) : [];
   });
 
-  const [stateButton, setStateButton] = useState(true);
-  const [count, setCount] = useState(tasks.length);
+  const [stateButton, setStateButton] = React.useState(true);
+  const [count, setCount] = React.useState(tasks.length);
+  const [error, setError] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setCount(tasks.length);
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [tasks]);
@@ -25,7 +28,10 @@ const App = () => {
 
   function handleClick() {
     if (tasks.length === 5) {
-      console.log('Limite de tarefas atingido no plano gratuito.');
+      setError(true);
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
     } else {
       const action = Date.now();
 
@@ -68,13 +74,18 @@ const App = () => {
         TO::TASKS
       </h1>
       <section className='card'>
-        <span className='countTasks'>{count}/5 tarefas</span>
+        {error && <span className='error'>Contrate o plano premium!</span>}
+        <div className='boxTools'>
+          <span className='countTasks'>{count}/5 tarefas</span>
+          <FontAwesomeIcon icon={faSun} className='iconTheme' />
+        </div>
         <div className='boxTasks'>{renderTask()}</div>
         <div className='boxInput'>
           <input
             type='text'
             placeholder='O que você precisa fazer hoje?'
             className='inputTask'
+            maxLength={45}
             value={valueInput}
             onChange={handleChange}
           />
@@ -83,7 +94,7 @@ const App = () => {
             onClick={handleClick}
             disabled={stateButton}
           >
-            Salvar
+            <FontAwesomeIcon icon={faSave} />
           </button>
         </div>
       </section>

@@ -26,9 +26,28 @@
   box-shadow: 1px 1px 10px 1px var(--neutral3);
   border-radius: 5px;
 }
+.boxTools {
+  width: 100%;
+  padding: 1.5%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 5%;
+}
 .countTasks {
-  align-self: end;
   color: var(--neutral2);
+  font-size: var(--fontSizeMin);
+}
+.iconTheme {
+  color: var(--neutral);
+  font-size: var(--fontSize);
+  cursor: pointer;
+}
+.error {
+  animation: vibration 0.2s forwards;
+  animation-iteration-count: 3;
+  color: #cb0000;
+  align-self: center;
   font-size: var(--fontSizeMin);
 }
 .boxTasks {
@@ -88,4 +107,21 @@
   color: var(--neutral2);
   border: none;
   cursor: not-allowed;
+}
+@keyframes vibration {
+  0% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: 5px;
+  }
+  50% {
+    margin-left: 0;
+  }
+  75% {
+    margin-left: -5px;
+  }
+  100% {
+    margin-left: 0;
+  }
 }
