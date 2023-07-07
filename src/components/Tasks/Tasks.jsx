@@ -22,17 +22,30 @@ const Tasks = ({ list, erase }) => {
     return () => clearInterval(interval);
   }, [list]);
 
+  function timeFormatter(id) {
+    const minutes = minutesElapsed[id];
+    if (minutes === undefined) {
+      return '•••';
+    } else if (minutes === 0) {
+      return 'Agora';
+    } else if (minutes >= 60) {
+      return Math.floor(minutes / 60) + 'h';
+    } else if (minutes >= 1440) {
+      return Math.floor(minutes / 24) + 'd';
+    } else if (minutes >= 10080) {
+      return 'Mais de uma semana';
+    } else {
+      return minutes + 'min';
+    }
+  }
+
   return (
     <>
       {list.map((item) => (
         <section key={item.id} className='boxItemTask'>
           <p className='nameTask'>{item.name}</p>
           <div className='boxStats'>
-            <p>
-              {minutesElapsed[item.id] === 0
-                ? 'Agora'
-                : minutesElapsed[item.id] + 'min'}
-            </p>
+            <p>{timeFormatter(item.id)}</p>
             <FontAwesomeIcon
               icon={faSquareMinus}
               className='faIcon'

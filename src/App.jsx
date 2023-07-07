@@ -67,7 +67,7 @@ const App = () => {
             onClick={handleClick}
             disabled={stateButton}
           >
-            SALVAR
+            Salvar
           </button>
         </div>
       </section>
