@@ -28,7 +28,7 @@
 }
 .boxTools {
   width: 100%;
-  padding: 1.5%;
+  padding: 4%;
   display: flex;
   justify-content: end;
   align-items: center;
@@ -42,6 +42,13 @@
   color: var(--neutral);
   font-size: var(--fontSize);
   cursor: pointer;
+  transition: 0.3s;
+}
+.iconTheme:hover {
+  transform: scale(1.25);
+}
+.iconTheme:active {
+  transform: scale(0.5);
 }
 .error {
   animation: vibration 0.2s forwards;
@@ -92,7 +99,7 @@
 .btnSaveTask {
   background-color: var(--background);
   color: var(--neutral);
-  border: 1px solid var(--neutral);
+  border: 1px solid var(--neutral2);
   width: 15%;
   height: 85%;
   font-size: var(--fontSize);
@@ -101,6 +108,7 @@
 }
 .btnSaveTask:hover {
   background-color: var(--primary2);
+  border: 1px solid var(--primary);
 }
 .btnSaveTask:disabled {
   background-color: var(--background);

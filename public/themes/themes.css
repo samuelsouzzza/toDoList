@@ -18,13 +18,13 @@
   --fontSize: 17px;
   --fontSizeMax: 35px;
   --fontSizeMin: 13px;
-  --background: #f5f4f4;
-  --neutral: #fefefe;
-  --neutral2: #fefefe54;
-  --neutral3: #fefefe10;
+  --background: #fefefe;
+  --neutral: #262626;
+  --neutral2: #acacac;
+  --neutral3: #10101010;
   --primary: #8119ff;
   --primary2: #8019ff25;
-  --secondary: #00fe46;
+  --secondary: #00c857;
 }
 
 * {
