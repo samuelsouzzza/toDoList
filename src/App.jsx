@@ -24,18 +24,22 @@ const App = () => {
   }
 
   function handleClick() {
-    const action = Date.now();
+    if (tasks.length === 5) {
+      console.log('Limite de tarefas atingido no plano gratuito.');
+    } else {
+      const action = Date.now();
 
-    const newTask = {
-      id: tasks.length + 1,
-      name: valueInput,
-      time: action,
-      checked: false,
-    };
+      const newTask = {
+        id: tasks.length + 1,
+        name: valueInput,
+        time: action,
+        checked: false,
+      };
 
-    setTasks([...tasks, newTask]);
-    setValueInput('');
-    setStateButton(true);
+      setTasks([...tasks, newTask]);
+      setValueInput('');
+      setStateButton(true);
+    }
   }
 
   function deleteTask(idTask) {
@@ -64,7 +68,7 @@ const App = () => {
         TO::TASKS
       </h1>
       <section className='card'>
-        <span className='countTasks'>{count}/7 tarefas</span>
+        <span className='countTasks'>{count}/5 tarefas</span>
         <div className='boxTasks'>{renderTask()}</div>
         <div className='boxInput'>
           <input
