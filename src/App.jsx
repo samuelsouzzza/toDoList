@@ -84,8 +84,6 @@ const App = () => {
   function changeTheme() {
     const storedTheme = localStorage.getItem('theme');
     setTheme(storedTheme == 'dark' ? 'light' : 'dark');
-
-    root.classList.replace(storedTheme, theme);
   }
 
   return (
