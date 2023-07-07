@@ -60,9 +60,11 @@ const App = () => {
 
   return (
     <div className='container'>
-      <h1>ToTasks</h1>
+      <h1 className='title' translate='no'>
+        TO::TASKS
+      </h1>
       <section className='card'>
-        <span className='countTasks'>{count}/10 tarefas</span>
+        <span className='countTasks'>{count}/7 tarefas</span>
         <div className='boxTasks'>{renderTask()}</div>
         <div className='boxInput'>
           <input
