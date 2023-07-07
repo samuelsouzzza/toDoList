@@ -19,13 +19,16 @@
   background-color: var(--primary2);
 }
 .boxItemTask.checked {
-  transition: 0s;
   color: var(--neutral2);
   text-decoration: line-through;
+}
+.boxItemTask.checked:hover {
+  text-decoration: none;
 }
 .nameTask {
   overflow-x: hidden;
   width: 85%;
+  margin-left: 1%;
 }
 .boxStats {
   margin: 1% 0;
@@ -36,15 +39,18 @@
   justify-content: end;
   align-items: center;
 }
-.faIcon {
+.iconDel {
   font-size: var(--fontSize);
   cursor: pointer;
   transition: 0.3s;
-  margin: 0 0 0 10%;
+  margin: 0 0 0 15%;
 }
-.faIcon:hover {
+.iconDel:hover {
   color: var(--neutral);
   transform: scale(1.25);
+}
+.iconCheck {
+  margin: 0 2.5%;
 }
 @keyframes newTask {
   from {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquareMinus } from '@fortawesome/free-solid-svg-icons';
+import { faSquareMinus, faCheck } from '@fortawesome/free-solid-svg-icons';
 import './Tasks.css';
 
 const Tasks = ({ list, erase, onOffCheck }) => {
@@ -24,6 +24,7 @@ const Tasks = ({ list, erase, onOffCheck }) => {
 
   function timeFormatter(id) {
     const minutes = minutesElapsed[id];
+
     if (minutes === undefined) {
       return '•••';
     } else if (minutes === 0) {
@@ -47,13 +48,16 @@ const Tasks = ({ list, erase, onOffCheck }) => {
           className={`boxItemTask ${item.checked && 'checked'}`}
         >
           <p className='nameTask' onClick={() => onOffCheck(index)}>
+            {item.checked && (
+              <FontAwesomeIcon icon={faCheck} className='iconCheck' />
+            )}
             {item.name}
           </p>
           <div className='boxStats'>
             <p>{timeFormatter(item.id)}</p>
             <FontAwesomeIcon
               icon={faSquareMinus}
-              className='faIcon'
+              className='iconDel'
               onClick={() => erase(index)}
             />
           </div>

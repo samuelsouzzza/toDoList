@@ -18,13 +18,11 @@
   justify-content: end;
   gap: 1%;
 }
-
 .countTasks {
   align-self: end;
   color: var(--neutral2);
   font-size: var(--fontSizeMin);
 }
-
 .boxTasks {
   height: 85%;
   overflow-y: scroll;
@@ -41,7 +39,6 @@
 .boxTasks::-webkit-scrollbar-track {
   background-color: var(--background);
 }
-
 .noTasks {
   border: none;
   color: #555;
@@ -51,11 +48,9 @@
   height: 100%;
   font-style: italic;
 }
-
 .boxInput {
   height: 10%;
 }
-
 .inputTask {
   width: 85%;
   height: 85%;
@@ -67,7 +62,6 @@
   outline: none;
   color: var(--neutral);
 }
-
 .btnSaveTask {
   background-color: var(--background);
   color: var(--neutral);
@@ -79,7 +73,7 @@
   transition: 0.3s;
 }
 .btnSaveTask:hover {
-  background-color: var(--secondary);
+  background-color: var(--primary2);
 }
 .btnSaveTask:disabled {
   background-color: var(--background);
