@@ -107,7 +107,7 @@ const App = () => {
             type='text'
             placeholder='O que você precisa fazer hoje?'
             className='inputTask'
-            maxLength={45}
+            maxLength={50}
             value={valueInput}
             onChange={handleChange}
           />

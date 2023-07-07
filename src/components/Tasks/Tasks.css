@@ -7,8 +7,7 @@
   color: var(--neutral);
   margin: 1% 0;
   padding: 0 3%;
-  min-height: 40px;
-  height: auto;
+  height: 50px;
   animation: newTask 0.3s forwards;
   font-size: var(--fontSize);
   border-bottom: 1px solid var(--primary2);
@@ -27,7 +26,9 @@
   text-decoration: none;
 }
 .nameTask {
-  overflow-x: hidden;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   width: 85%;
   margin-left: 1%;
 }
