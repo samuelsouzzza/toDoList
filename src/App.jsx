@@ -1,7 +1,7 @@
 import React from 'react';
 import Tasks from './components/Tasks/Tasks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faSave } from '@fortawesome/free-solid-svg-icons';
+import { faSave, faPalette } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 
 const App = () => {
@@ -89,17 +89,17 @@ const App = () => {
   return (
     <div className='container'>
       <h1 className='title' translate='no'>
-        TO::TASKS
+        To::Tasks
       </h1>
       <section className='card'>
-        {error && <span className='error'>Contrate o plano premium!</span>}
+        {error && <span className='error'>CONTRATE O PLANO PREMIUM!</span>}
         <div className='boxTools'>
-          <span className='countTasks'>{count}/5 tarefas</span>
           <FontAwesomeIcon
             onClick={changeTheme}
-            icon={faSun}
+            icon={faPalette}
             className='iconTheme'
           />
+          <span className='countTasks'>{count}/5</span>
         </div>
         <div className='boxTasks'>{renderTask()}</div>
         <div className='boxInput'>

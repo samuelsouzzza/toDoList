@@ -7,7 +7,7 @@
   color: var(--neutral);
   margin: 1% 0;
   padding: 0 3%;
-  min-height: 50px;
+  min-height: 40px;
   height: auto;
   animation: newTask 0.3s forwards;
   font-size: var(--fontSize);
@@ -51,7 +51,7 @@
   transform: scale(1.25);
 }
 .iconCheck {
-  margin: 0 2.5%;
+  margin: 0 2.5% 0 0;
 }
 @keyframes newTask {
   from {
