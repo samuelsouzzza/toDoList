@@ -16,9 +16,22 @@ const App = () => {
   const [count, setCount] = React.useState(tasks.length);
   const [error, setError] = React.useState(false);
 
+  const [theme, setTheme] = React.useState(() => {
+    const storedTheme = localStorage.getItem('theme');
+    return storedTheme ? storedTheme : 'dark';
+  });
+  const root = document.querySelector(':root');
+
+  React.useEffect(() => {
+    localStorage.setItem('theme', theme);
+    root.removeAttribute('class');
+    root.classList.add(theme);
+  }, [theme]);
+
   React.useEffect(() => {
     setCount(tasks.length);
     localStorage.setItem('tasks', JSON.stringify(tasks));
+    setTheme(theme);
   }, [tasks]);
 
   function handleChange({ target }) {
@@ -68,6 +81,13 @@ const App = () => {
     }
   }
 
+  function changeTheme() {
+    const storedTheme = localStorage.getItem('theme');
+    setTheme(storedTheme == 'dark' ? 'light' : 'dark');
+
+    root.classList.replace(storedTheme, theme);
+  }
+
   return (
     <div className='container'>
       <h1 className='title' translate='no'>
@@ -77,7 +97,11 @@ const App = () => {
         {error && <span className='error'>Contrate o plano premium!</span>}
         <div className='boxTools'>
           <span className='countTasks'>{count}/5 tarefas</span>
-          <FontAwesomeIcon icon={faSun} className='iconTheme' />
+          <FontAwesomeIcon
+            onClick={changeTheme}
+            icon={faSun}
+            className='iconTheme'
+          />
         </div>
         <div className='boxTasks'>{renderTask()}</div>
         <div className='boxInput'>

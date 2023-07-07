@@ -1,11 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap');
 
-:root {
+:root.dark {
   --font: 'Open Sans', sans-serif;
   --fontSize: 17px;
   --fontSizeMax: 35px;
   --fontSizeMin: 13px;
   --background: #101010;
+  --neutral: #fefefe;
+  --neutral2: #fefefe54;
+  --neutral3: #fefefe10;
+  --primary: #8119ff;
+  --primary2: #8019ff25;
+  --secondary: #00fe46;
+}
+:root.light {
+  --font: 'Open Sans', sans-serif;
+  --fontSize: 17px;
+  --fontSizeMax: 35px;
+  --fontSizeMin: 13px;
+  --background: #f5f4f4;
   --neutral: #fefefe;
   --neutral2: #fefefe54;
   --neutral3: #fefefe10;
