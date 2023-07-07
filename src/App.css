@@ -17,6 +17,8 @@
   flex-direction: column;
   justify-content: end;
   gap: 1%;
+  box-shadow: 1px 1px 10px 1px var(--neutral3);
+  border-radius: 5px;
 }
 .countTasks {
   align-self: end;
