@@ -143,3 +143,25 @@
     margin-left: 0;
   }
 }
+@media only screen and (max-width: 600px) {
+  .container {
+    height: 100vh;
+    gap: 2%;
+  }
+  .card {
+    width: 95%;
+    padding-top: 5%;
+    height: 90vh;
+    justify-content: start;
+    gap: 0;
+    box-shadow: none;
+  }
+  .title {
+    margin: 2.5% 0 0 0;
+    width: 100%;
+    padding: 5%;
+  }
+  .boxTasks {
+    min-height: 70px;
+  }
+}
