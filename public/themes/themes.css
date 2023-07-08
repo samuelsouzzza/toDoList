@@ -32,4 +32,5 @@
 }
 *::selection {
   background-color: var(--primary);
+  color: #fefefe;
 }
