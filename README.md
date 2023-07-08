@@ -64,7 +64,7 @@ Aqui estão alguns recursos úteis que foram utilizados no desenvolvimento deste
 
 SAMUEL RIBEIRO DE SOUZA
 
-- GitHub: [@samuelsouzzza](https://www.github.com/octokatherine)
+- GitHub: [@samuelsouzzza](https://www.github.com/samuelsouzzza/)
 - LinkedIn: [@samuelsouzzza](https://www.linkedin.com/in/samuelsouzzza/)
 - Instagram: [@samuel.souzzza](https://www.instagram.com/samuel.souzzza/)
 
@@ -76,7 +76,7 @@ Este projeto está licenciado sob a Licença MIT. Consulte [MIT](https://choosea
 
 ## Contribuição
 
-Se você quiser contribuir, fique à vontade para clonar o repositório do projeto no GitHub: https://github.com/samuelsouzzza/toDoList
+Se você quiser contribuir, fique à vontade para clonar o repositório do projeto no GitHub: https://github.com/samuelsouzzza/toTasks-toDoList
 
 Você pode enviar pull requests com melhorias, correções de bugs ou novos recursos. Serão muito bem-vindos!
 ## Feedback
