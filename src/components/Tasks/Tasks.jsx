@@ -32,7 +32,7 @@ const Tasks = ({ list, erase, onOffCheck }) => {
     } else if (minutes >= 60) {
       return Math.floor(minutes / 60) + 'h';
     } else if (minutes >= 1440) {
-      return Math.floor(minutes / 24) + 'd';
+      return Math.floor(minutes / 1440) + 'd';
     } else if (minutes >= 10080) {
       return 'Mais de uma semana';
     } else {
